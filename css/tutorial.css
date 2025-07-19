@@ -1,3 +1,7 @@
+#main-tutorial {
+    margin-bottom: 5rem;
+}
+
 #tutorial-h1 {
     padding-left: 1rem;
 }
@@ -6,7 +10,7 @@
     margin-left: 3rem;
 }
 
-#instructions-ol-level-one > li {
+#instructions-ol-level-one>li {
     margin: .5rem;
     font-size: 1.4rem;
 }
@@ -21,7 +25,26 @@
 }
 
 .tutorial-images {
-    max-width: 40%;
+    max-width: 60%;
     height: auto;
     margin: 0.5rem;
+}
+
+.figure_li {
+    list-style: none;
+}
+
+.figure_li figure figcaption {
+    margin: .25rem;
+}
+
+#image_after_lists .tutorial-images {
+    max-width: 70%;
+    margin-left: 5rem;
+    display: block;
+    padding-left: 0;
+}
+
+#image_after_lists figcaption {
+    margin-left: 5.5rem;
 }
