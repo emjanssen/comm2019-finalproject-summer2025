@@ -19,3 +19,8 @@
 #instructions-ol-level-one li ul li {
     padding: .5rem;
 }
+
+.tutorial-images {
+    max-width: 30%;
+    height: auto;
+}
