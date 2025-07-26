@@ -40,12 +40,15 @@
 
 #grid-main-index {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
     grid-template-rows: auto auto;
     grid-template-areas:
         "grid-main-index-one grid-main-index-two"
-        "grid-main-index-three grid-main-index-four";
+        " grid-main-index-three grid-main-index-four"
+
     text-align: center;
     gap: 1em;
     margin: 1em;
+    padding-left: 5em;
+    padding-right: 5em;
 }
