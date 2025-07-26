@@ -6,5 +6,5 @@ headerGlobal.innerHTML = `
         <li class="header-navigation-li"><a href="index.html">Home</a></li>
         <li class="header-navigation-li"><a href="biography.html">Biography</a></li>
         <li class="header-navigation-li"><a href="tutorial.html">Tutorial</a></li>
-        <li class="header-navigation-li"><a href="sectionfour.html">Section Four</a></li>
+        <li class="header-navigation-li"><a href="animations.html">Section Four</a></li>
     </ul>`;
