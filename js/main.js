@@ -17,7 +17,7 @@ if (headerGlobal) {
 
       <div id="header-global-grid-col-two">
         <div id="header-title">
-          <h1>${pageTitle || 'Untitled'}</h1>
+          <h1>Placeholder - ${pageTitle || 'Untitled'}</h1>
         </div>
       </div>
 
