@@ -1,0 +1,16 @@
+/* - - - Body - - - */
+
+.grid-container-index {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    gap: 1rem;
+}
+
+#index-main {
+    grid-area: project-two;
+}

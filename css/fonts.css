@@ -1,0 +1,37 @@
+/* Merriweather */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+/* Note: font weight and style in @font-face declarations tell the browser which font-face file to use for which weight and style. */
+
+/* Playfair Display */
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url('fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Raleway */
+
+@font-face {
+    font-family: "Raleway";
+    src: url('fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url('fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}

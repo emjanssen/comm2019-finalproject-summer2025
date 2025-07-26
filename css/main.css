@@ -1,5 +1,44 @@
+/* - - - Universal Reset - - - */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* - - - Header - - - */
+
+#header-global {
+    grid-area: header-global;
+}
+
+#header-global-grid-col-one {
+    grid-area: header-global-grid-col-one;
+}
+
+#header-global-grid-col-two {
+    grid-area: header-global-grid-col-two;
+    text-align: center;
+}
+
+#header-global-grid-col-three {
+    grid-area: header-global-grid-col-three;
+}
+
+#header-global-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header-global-grid-col-one header-global-grid-col-two header-global-grid-col-three";
+    gap: 1em;
+}
+
+
+
+
+/* - - - Footer - - - */
+
+#footer-global {
+    grid-area: project-four;
 }
