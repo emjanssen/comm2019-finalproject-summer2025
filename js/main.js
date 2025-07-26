@@ -20,3 +20,5 @@ const footerGlobal = document.querySelector('#footer-global');
 footerGlobal.innerHTML = `
   <p>&copy; 2025 Elizabeth Janssen. All rights reserved.</p>
 `;
+
+document.title = `Placeholder - ${pageTitle}`;
