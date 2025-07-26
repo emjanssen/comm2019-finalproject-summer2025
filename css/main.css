@@ -18,6 +18,7 @@ img {
 #header-global {
     grid-area: header-global;
     border: 1px solid green;
+    padding: 1em;
 }
 
 #header-global-grid-col-one {
@@ -65,6 +66,7 @@ img {
 #footer-global {
     grid-area: footer-global;
     border: 1px green solid;
+    padding: 1em;
 }
 
 #footer-global-grid-col-one {

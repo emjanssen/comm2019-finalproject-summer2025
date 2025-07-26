@@ -10,6 +10,8 @@
         "footer-global footer-global";
 }
 
+/* - - - Main - - - */
+
 #index-main {
     grid-area: index-main;
     border: 1px pink solid;
@@ -17,18 +19,23 @@
 
 #grid-main-index-one {
     grid-area: grid-main-index-one;
+    border: 1px cyan solid;
 }
 
 #grid-main-index-two {
     grid-area: grid-main-index-two;
+    border: 1px goldenrod solid;
 }
 
 #grid-main-index-three {
     grid-area: grid-main-index-three;
+    border: 1px blueviolet solid;
+    
 }
 
 #grid-main-index-four {
     grid-area: grid-main-index-four;
+    border: 1px royalblue solid;
 }
 
 #grid-main-index {
@@ -39,4 +46,6 @@
         "grid-main-index-one grid-main-index-two"
         "grid-main-index-three grid-main-index-four";
     text-align: center;
+    gap: 1em;
+    margin: 1em;
 }
