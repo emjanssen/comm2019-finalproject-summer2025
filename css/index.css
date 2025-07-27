@@ -14,7 +14,6 @@
 
 #index-main {
     grid-area: index-main;
-    border: 1px pink solid;
 }
 
 #grid-main-index {
@@ -32,7 +31,6 @@
 
 #grid-main-index-one {
     grid-area: grid-main-index-one;
-    border: 1px cyan solid;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
@@ -44,7 +42,6 @@
 
 #grid-main-index-two {
     grid-area: grid-main-index-two;
-    border: 1px goldenrod solid;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -52,6 +49,5 @@
 
 #grid-main-index-three {
     grid-area: grid-main-index-three;
-    border: 1px blueviolet solid;
 }
 

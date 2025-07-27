@@ -6,7 +6,27 @@
     box-sizing: border-box;
 }
 
+/* - - - Global Variables - - - */
+
+:root {
+    --body-background-color: linear-gradient(to bottom, #c2e59c, #64b3f4);
+    --header-background-color: linear-gradient(to right, #f0f5d8, #cbead3);
+    --footer-background-color: linear-gradient(to left, #cbead3, #d6f2f6);
+
+    --body-text-color: #263238;
+    --header-text-color: #1d1d1d;
+    --footer-text-color: #1a1a1a;
+}
+
 /* - - - Body - - - */
+
+body {
+    background: var(--body-background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--body-text-color);
+}
 
 img {
     max-width: 100%;
@@ -21,22 +41,27 @@ h1 {
 
 #header-global {
     grid-area: header-global;
-    border: 1px solid green;
     padding: 1em;
+    
+    background: var(--header-background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    color: var(--header-text-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 #header-global-grid-col-one {
     grid-area: header-global-grid-col-one;
     display: flex;
     justify-content: space-evenly;
-    border: 1px blue solid;
 }
 
 #header-global-grid-col-two {
     grid-area: header-global-grid-col-two;
     display: flex;
     justify-content: space-around;
-    border: 1px purple solid;
 }
 
 #header-title h1 {
@@ -56,7 +81,6 @@ h1 {
 }
 
 #header-navigation-ul {
-    border: 1px solid red;
     list-style: none;
     display: flex;
     justify-content: space-around;
@@ -69,14 +93,20 @@ h1 {
 
 #footer-global {
     grid-area: footer-global;
-    border: 1px green solid;
     padding: 1em;
+
+    background: var(--footer-background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    color: var(--footer-text-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 #footer-global-grid-col-one {
     grid-area: footer-global-grid-col-one;
     text-align: center;
-    border: 1px orange solid;
 }
 
 #footer-global-grid {
