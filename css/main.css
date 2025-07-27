@@ -9,13 +9,14 @@
 /* - - - Global Variables - - - */
 
 :root {
-    --body-background-color: linear-gradient(to bottom, #c2e59c, #64b3f4);
-    --header-background-color: linear-gradient(to right, #f0f5d8, #cbead3);
-    --footer-background-color: linear-gradient(to left, #cbead3, #d6f2f6);
+  --body-background-color: linear-gradient(to bottom, #eaeaea, #cfd9df);
+  --body-text-color: #2c3e50;
 
-    --body-text-color: #263238;
-    --header-text-color: #1d1d1d;
-    --footer-text-color: #1a1a1a;
+  --header-background-color: linear-gradient(to left, #a2c2c7, #7ea0a5);
+  --header-text-color: #263238;
+
+  --footer-background-color: linear-gradient(to right, #a2c2c7, #7ea0a5);
+  --footer-text-color: #1f2a30;
 }
 
 /* - - - Body - - - */
