@@ -53,6 +53,17 @@ h1 {
     margin: 0;
 }
 
+.global-page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 1fr 70px;
+    grid-template-areas: 
+    "header-global"
+    "main-global"
+    "footer-global;";
+}
+
+
 a:focus {
     outline: 2px dashed var(--links-focus-outline-color);
     outline-offset: 4px;
@@ -74,10 +85,9 @@ a:active {
     color: var(--links-active-font-color);
 }
 
-
 /* - - - Header - - - */
 
-#header-global {
+.header-global {
     grid-area: header-global;
     height: 90px;
     
@@ -138,7 +148,7 @@ a:active {
 
 /* - - - Footer - - - */
 
-#footer-global {
+.footer-global {
     height: 70px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
