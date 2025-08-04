@@ -10,28 +10,28 @@
 
 :root {
     /* Background Colours */
-    --header-background-color: #e2e2e2;
-    --footer-background-color: #e6e6e6;
-    --body-background-color: #f1f1f1;
+    --header-background-color: #d8e7d4;
+    --footer-background-color: #a8c1a1;
+    --body-background-color: #ebf2eb;
 
     /* Fonts */
     --body-font-family: "Merriweather", serif;
     --body-font-weight: 400;
     --body-font-style: normal;
-    --body-text-color: #2c3e50;
+    --body-text-color: #3e4f3e;
 
     --header-footer-font-family: "Raleway", sans-serif;
     --header-footer-font-weight: 400;
     --header-footer-font-style: normal;
-    --header-font-colour: black;
-    --footer-font-colour: black;
+    --header-font-colour: #304130;
+    --footer-font-colour: #304130;
 
     /* Links */
-    --links-unvisited-font-color: rgb(40, 100, 95);
-    --links-visited-font-color: rgb(60, 120, 110);
-    --links-hover-font-color: rgb(90, 150, 140);
-    --links-active-font-color: rgb(30, 85, 80);
-    --links-focus-outline-color: rgb(115, 175, 165);
+    --links-unvisited-font-color: #557a57;
+    --links-visited-font-color: #496b49;
+    --links-hover-font-color: #3d593d;
+    --links-active-font-color: #2b3f2b;
+    --links-focus-outline-color: #9cc49c;
 }
 
 /* - - - Body - - - */
