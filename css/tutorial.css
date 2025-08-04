@@ -27,7 +27,7 @@ figcaption {
 #instructions-ol-level-one > li {
     width: clamp(550px, 1vw, 600px);
     height: auto;
-    background-color: #f0f0f0;
+    background-color: #f0f5f0;
     padding: 1.5rem;
     margin: 1.75rem;
     border-radius: 10px;
