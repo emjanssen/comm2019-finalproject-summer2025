@@ -53,6 +53,13 @@ h1 {
     margin: 0;
 }
 
+li {
+    list-style: none;
+    padding: .5rem;
+    font-size: 1.2rem;
+    margin: .75rem;
+}
+
 .global-page-grid {
     display: grid;
     grid-template-columns: 1fr;
