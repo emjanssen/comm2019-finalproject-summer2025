@@ -40,9 +40,7 @@ const footerGlobal = document.querySelector('#footer-global');
 if (footerGlobal) {
   footerGlobal.innerHTML = `
       <div id="footer-global-grid">
-            <div id="footer-global-grid-col-one">
     <p>&copy; 2025 Elizabeth Janssen. All rights reserved.</p>
-          </div>
     </div>
   `;
 }
