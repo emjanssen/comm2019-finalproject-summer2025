@@ -1,10 +1,10 @@
 if (typeof pageTitle !== 'undefined') {
-  document.title = `Placeholder - ${pageTitle}`;
+  document.title = `${pageTitle}`;
 } else {
-  document.title = `Placeholder - Untitled`;
+  document.title = `Untitled`;
 }
 
-const headerGlobal = document.querySelector('#header-global');
+const headerGlobal = document.querySelector('.header-global');
 if (headerGlobal) {
   headerGlobal.innerHTML = `
     <div id="header-global-grid">
@@ -17,7 +17,7 @@ if (headerGlobal) {
 
       <div id="header-global-grid-col-two">
         <div id="header-title">
-          <h1>Placeholder - ${pageTitle || 'Untitled'}</h1>
+          <h1>${pageTitle || 'Untitled'}</h1>
         </div>
       </div>
 
@@ -36,11 +36,9 @@ if (headerGlobal) {
   `;
 }
 
-const footerGlobal = document.querySelector('#footer-global');
+const footerGlobal = document.querySelector('.footer-global');
 if (footerGlobal) {
   footerGlobal.innerHTML = `
-      <div id="footer-global-grid">
     <p>&copy; 2025 Elizabeth Janssen. All rights reserved.</p>
-    </div>
   `;
 }
