@@ -11,6 +11,7 @@
 :root {
   --body-background-color: linear-gradient(to bottom, #eaeaea, #cfd9df);
   --body-text-color: #2c3e50;
+  --body-font-family: "Merriweather";
 
   --header-background-color: linear-gradient(to left, #a2c2c7, #7ea0a5);
   --header-text-color: #263238;
@@ -23,6 +24,7 @@
 
 body {
     background: var(--body-background-color);
+    font-family: var(--body-font-family);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
