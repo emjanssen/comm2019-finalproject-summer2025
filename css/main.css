@@ -159,7 +159,7 @@ a:active {
 /* - - - Main - - - */
 
 .main-global {
-  grid-area: main-global;
+    grid-area: main-global;
 }
 
 /* - - - Footer - - - */
