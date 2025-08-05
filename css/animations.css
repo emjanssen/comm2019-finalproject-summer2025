@@ -1,0 +1,43 @@
+#animations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "animations-one animations-two animations-three"
+    "animations-four animations-five animations-six";
+    margin: 3rem;
+}
+
+#animations-one {
+    grid-area: animations-one;
+}
+
+#animations-two {
+    grid-area: animations-two;
+}
+
+#animations-three {
+    grid-area: animations-three;
+}
+
+#animations-four {
+    grid-area: animations-four;
+}
+
+#animations-five {
+    grid-area: animations-five;
+}
+
+#animations-six {
+    grid-area: animations-six;
+}
+
+#animations-one,
+#animations-two,
+#animations-three,
+#animations-four,
+#animations-five,
+#animations-six {
+    border: 1px solid red;
+    min-height: 350px;
+}
