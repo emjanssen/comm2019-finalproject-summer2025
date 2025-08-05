@@ -32,3 +32,10 @@ figcaption {
     max-width: 100%;
     height: auto;
 }
+
+#instructions-ol-level-one li {
+    list-style: none;
+    padding: .5rem;
+    font-size: 1.2rem;
+    margin: .75rem;
+}
