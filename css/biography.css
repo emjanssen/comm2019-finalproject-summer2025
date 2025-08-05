@@ -1,10 +1,11 @@
 #biography-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1.25fr 2.5fr 1.25fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
         "biography-grid-two biography-grid-one biography-grid-three";
-    gap: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 #biography-grid-one {
@@ -15,11 +16,10 @@
     grid-template-areas:
         "bio-grid-one-content-one bio-grid-one-content-two"
         "bio-grid-one-content-three bio-grid-one-content-three";
-    background-color: #f0f5f0;
+    background-color: #e4efe4;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(23, 22, 22, 0.2);
-    margin: 5rem;
-    margin-top: 3rem;
+    border: 1px solid #cdded1;
+    margin: 1rem;
 }
 
 #biography-grid-two {
@@ -30,11 +30,41 @@
     grid-area: biography-grid-three;
 }
 
+#biography-grid-two,
+#biography-grid-three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.biography-img {
+    display: flex;
+    flex-direction: column;
+    /* center figcaption under image */
+    align-items: center;
+    width: 100%;
+}
+
+#biography-grid-two img,
+#biography-grid-three img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 10px;
+    padding: 2.5rem;
+    background-color: #f1f8f1;
+    border: 1px solid #cdded1;
+}
+
+/* biography-grid-one details */
 #bio-grid-one-content-one,
 #bio-grid-one-content-two,
 #bio-grid-one-content-three {
     display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -42,11 +72,11 @@
 /* bio paragraph */
 #bio-grid-one-content-one {
     grid-area: bio-grid-one-content-one;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 3rem;
 }
 
 /* bio photo */
@@ -64,4 +94,6 @@
 /* bio one-sentence */
 #bio-grid-one-content-three {
     grid-area: bio-grid-one-content-three;
+    display: flex;
+    justify-content: center;
 }
