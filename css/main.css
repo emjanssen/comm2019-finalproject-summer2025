@@ -57,7 +57,7 @@ h1 {
 .global-page-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 80px;
+    grid-template-rows: 90px 1fr 80px;
     grid-template-areas:
         "header-global"
         "main-global"
@@ -170,7 +170,7 @@ a:active {
 
 .footer-global {
     grid-area: footer-global;
-    height: 70px;
+    height: 80px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
