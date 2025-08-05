@@ -79,6 +79,10 @@ figcaption {
     padding: 3rem;
 }
 
+#bio-grid-one-content-one p{
+    line-height: 1.6;
+}
+
 /* bio photo */
 #bio-grid-one-content-two {
     grid-area: bio-grid-one-content-two;
