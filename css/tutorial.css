@@ -36,6 +36,11 @@ figcaption {
 #instructions-ol-level-one li {
     list-style: none;
     padding: .5rem;
-    font-size: 1.2rem;
-    margin: .75rem;
+    font-size: 1.1rem;
+    margin: 1.5rem;
+}
+
+.instruction-titles p {
+    padding: .75rem;
+    font-size: 1.4rem;
 }
