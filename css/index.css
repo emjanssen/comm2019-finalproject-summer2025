@@ -1,9 +1,11 @@
 #index-grid {
     display: grid;
-    grid-template-columns: 3fr 1.5fr 3fr;
+    grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas:
         "index-grid-one index-grid-three index-grid-two";
+        margin-top: 3rem;
+        margin-bottom: 5rem;
 }
 
 #index-grid-one {
@@ -40,7 +42,7 @@
 
 #index-grid-three p {
     padding: 1rem;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 #index-grid-one img,
