@@ -57,11 +57,11 @@ h1 {
 .global-page-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 1fr 70px;
+    grid-template-rows: 100px 1fr 80px;
     grid-template-areas:
         "header-global"
         "main-global"
-        "footer-global;";
+        "footer-global";
 }
 
 a:focus {
@@ -146,11 +146,24 @@ a:active {
 #header-navigation-ul li {
     font-size: 1.15rem;
     list-style: none;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+#header-navigation-ul li:hover {
+    transform: scale(1.06);
 }
 
 #img-logo {
     max-height: 80px;
     width: auto;
+}
+
+/* - - - Main - - - */
+
+.main-global {
+  grid-area: main-global;
 }
 
 /* - - - Footer - - - */
