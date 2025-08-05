@@ -1,0 +1,67 @@
+#biography-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "biography-grid-two biography-grid-one biography-grid-three";
+    gap: 1rem;
+}
+
+#biography-grid-one {
+    grid-area: biography-grid-one;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: 1fr .1fr;
+    grid-template-areas:
+        "bio-grid-one-content-one bio-grid-one-content-two"
+        "bio-grid-one-content-three bio-grid-one-content-three";
+    background-color: #f0f5f0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(23, 22, 22, 0.2);
+    margin: 5rem;
+    margin-top: 3rem;
+}
+
+#biography-grid-two {
+    grid-area: biography-grid-two;
+}
+
+#biography-grid-three {
+    grid-area: biography-grid-three;
+}
+
+#bio-grid-one-content-one,
+#bio-grid-one-content-two,
+#bio-grid-one-content-three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* bio paragraph */
+#bio-grid-one-content-one {
+    grid-area: bio-grid-one-content-one;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* bio photo */
+#bio-grid-one-content-two {
+    grid-area: bio-grid-one-content-two;
+    justify-content: flex-start;
+}
+
+#bio-image {
+    border-radius: 15px;
+    max-height: 75%;
+    width: auto;
+}
+
+/* bio one-sentence */
+#bio-grid-one-content-three {
+    grid-area: bio-grid-one-content-three;
+}
