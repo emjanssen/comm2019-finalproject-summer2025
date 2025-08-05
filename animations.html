@@ -10,7 +10,7 @@
     <link rel="stylesheet" media="screen" href="css/main.css">
     <link rel="stylesheet" media="screen" href="css/animations.css">
     <link rel="icon" href="css/img/faviconStar.ico" type="image/x-icon">
-    <script>var pageTitle = "Animations - Placeholder";</script>
+    <script>var pageTitle = "Animations";</script>
     <script src="js/main.js" defer></script>
 
     <title></title>
@@ -27,11 +27,16 @@
             <div id="animations-grid">
 
                 <div id="animations-one">
-                    <p>Neon sign</p>
+                    <p id="neon-sign">Neon Sign</p>
                 </div>
 
                 <div id="animations-two">
-                    <p>Click to reval content</p>
+                    <input type="checkbox" id="toggle-content" hidden>
+                    <label for="toggle-content" class="click-to-show">Click to reveal content...</label>
+
+                    <div class="hidden-content">
+                        <p>Here is some hidden content.</p>
+                    </div>
                 </div>
 
                 <div id="animations-three">

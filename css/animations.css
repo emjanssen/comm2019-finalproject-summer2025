@@ -1,11 +1,12 @@
 #animations-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: auto auto;
     grid-template-areas: 
     "animations-one animations-two animations-three"
     "animations-four animations-five animations-six";
     margin: 3rem;
+    gap: 2rem;
 }
 
 #animations-one {
@@ -38,6 +39,83 @@
 #animations-four,
 #animations-five,
 #animations-six {
-    border: 1px solid red;
-    min-height: 350px;
+    background-color: #f1f8f1;
+    border: 1px solid #cdded1;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* animations-one */
+
+:root {
+    --neon-sign-color: rgb(227, 78, 183);
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1; /* Fully visible */
+    text-shadow:
+      0 0 5px var(--neon-sign-color),
+      0 0 10px var(--neon-sign-color),
+      0 0 20px var(--neon-sign-color),
+      0 0 40px var(--neon-sign-color),
+      0 0 80px var(--neon-sign-color);
+  }
+
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+#neon-sign {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 5px;
+    color: var(--neon-sign-color);
+    text-shadow:
+    0 0 5px var(--neon-sign-color),
+    0 0 10px var(--neon-sign-color),
+    0 0 20px var(--neon-sign-color),
+    0 0 40px var(--neon-sign-color),
+    0 0 80px var(--neon-sign-color);
+    font-size: 2rem;
+    /* animation: flicker 3s infinite; */
+}
+
+/* animations-two */
+
+.click-to-show {
+  cursor: pointer;
+  background-color: #e3eaf4;
+  color: #5c7ea3;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #a3c0dd;
+  box-shadow: 0 0 5px #c3d9ef;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.click-to-show:hover {
+  background-color: #d2deec;
+  box-shadow: 0 0 8px #b0c8e5;
+}
+
+.hidden-content {
+  display: none;
+  color: rgb(60, 56, 56);
+  background: #b0c3de;
+  padding: 1rem;
+  border: 1px solid #90b4d4;
+  box-shadow: 0 0 8px #90b4d4;
+  border-radius: 8px;
+  margin: 2rem;
+  text-align: center;
+}
+
+#toggle-content:checked + .click-to-show + .hidden-content {
+  display: block;
 }
