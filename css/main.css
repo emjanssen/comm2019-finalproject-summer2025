@@ -64,10 +64,6 @@ h1 {
         "footer-global";
 }
 
-a:focus {
-    outline: 2px dashed var(--links-focus-outline-color);
-    outline-offset: 4px;
-}
 
 a:link {
     color: var(--links-unvisited-font-color);
