@@ -20,9 +20,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 6rem;
+    margin: 8rem;
     margin-top: 3rem;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
     transition: transform 0.5s ease;
 }
 
