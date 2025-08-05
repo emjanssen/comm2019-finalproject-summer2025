@@ -1,0 +1,48 @@
+#index-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "index-grid-one index-grid-two";
+}
+
+#index-grid-one {
+    grid-area: index-grid-one;
+}
+
+#index-grid-two {
+    grid-area: index-grid-two;
+}
+
+#index-grid-one,
+#index-grid-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+    transition: transform 0.5s ease;
+}
+
+#index-grid-one img,
+#index-grid-two img {
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(23, 22, 22, 0.2);
+}
+
+#index-grid-one:hover,
+#index-grid-two:hover {
+    transform: translateY(-5px);
+}
+
+#index-grid-one {
+    margin-right: 3rem;
+}
+
+#index-grid-two {
+    margin-left: 3rem;
+}
