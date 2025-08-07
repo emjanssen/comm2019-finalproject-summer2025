@@ -45,17 +45,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 300px;
 }
 
 /* animations-one */
 
-:root {
-    --neon-sign-color: rgb(227, 78, 183);
+#animations-one {
+  flex-direction: column;
+  gap: 2rem;
 }
 
+:root {
+  --neon-sign-color: rgb(227, 78, 183);
+}
+
+/* Flicker animation */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
     text-shadow:
       0 0 5px var(--neon-sign-color),
       0 0 10px var(--neon-sign-color),
@@ -70,22 +77,48 @@
   }
 }
 
-#neon-sign {
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 5px;
-    color: var(--neon-sign-color);
-    text-shadow:
+/* Default neon styling (no flicker) */
+.neon-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: var(--neon-sign-color);
+  text-shadow:
     0 0 5px var(--neon-sign-color),
     0 0 10px var(--neon-sign-color),
     0 0 20px var(--neon-sign-color),
     0 0 40px var(--neon-sign-color),
     0 0 80px var(--neon-sign-color);
-    font-size: 2rem;
-    /* animation: flicker 3s infinite; */
 }
+
+/* Flicker only when checkbox is checked */
+#flicker-toggle:checked ~ #neon-sign {
+  animation: flicker 3s infinite;
+}
+
+/* Style the label like a button */
+#flicker-label {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 8px 16px;
+  background-color: #222;
+  color: white;
+  border: 2px solid var(--neon-sign-color);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  user-select: none;
+}
+
+#flicker-toggle:checked + #flicker-label {
+  background-color: var(--neon-sign-color);
+  color: black;
+}
+
 
 /* animations-two */
 
+/* Base styles remain the same */
 .click-to-show {
   cursor: pointer;
   background-color: #e3eaf4;
@@ -104,18 +137,217 @@
   box-shadow: 0 0 8px #b0c8e5;
 }
 
+/* Transitionable hidden state */
 .hidden-content {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
   color: rgb(60, 56, 56);
   background: #b0c3de;
-  padding: 1rem;
+  padding: 0 1rem;
   border: 1px solid #90b4d4;
   box-shadow: 0 0 8px #90b4d4;
   border-radius: 8px;
-  margin: 2rem;
+  margin: 0 2rem;
   text-align: center;
 }
 
+/* Smooth reveal when checkbox is checked */
 #toggle-content:checked + .click-to-show + .hidden-content {
+  max-height: 500px; /* or higher if you expect more content */
+  opacity: 1;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* animations-three */
+
+/* Pulse animation keyframes */
+@keyframes slowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+/* Base pulse target (static) */
+.pulse-text {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #9147ff;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Apply pulse animation only when checkbox is checked */
+#pulse-toggle:checked + .pulse-label + .pulse-text {
+  animation: slowPulse 3s ease-in-out infinite;
+}
+
+/* Style the toggle label */
+.pulse-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  color: #333;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+  user-select: none;
+  font-weight: 600;
+}
+
+/* Optional: change label style when pulse is active */
+#pulse-toggle:checked + .pulse-label {
+  background-color: #9147ff;
+  color: white;
+  border-color: #9147ff;
+}
+
+/* animations four */
+
+/* Style the toggle label as a button */
+.slide-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  color: #333;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  user-select: none;
+  font-weight: 600;
+}
+
+/* Base state: text off-screen to the left, hidden */
+.slide-text {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  /* Optional: keep text inline */
+  display: inline-block;
+}
+
+/* When checkbox is checked, slide text in */
+#slide-toggle:checked + .slide-label + .slide-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* animations five */
+
+/* Style the toggle label as a button */
+.spin-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  color: #333;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  user-select: none;
+  font-weight: 600;
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Base state: no spin */
+.spin-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* When checked, apply infinite spin animation */
+#spin-toggle:checked + .spin-label + .spin-text {
+  animation: spin 3s linear infinite;
+}
+
+/* animations six */
+
+/* Hamburger button styles */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: relative;
+  user-select: none;
+}
+
+.hamburger span {
   display: block;
+  height: 4px;
+  background: #333;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 10px;
+  width: 150px;
+}
+
+/* Menu list styles */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  margin-bottom: 8px;
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Show menu when checkbox is checked */
+#menu-toggle:checked + .hamburger + .dropdown-menu {
+  max-height: 300px; /* adjust as needed */
+}
+
+/* Optional: animate hamburger to X when open */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }

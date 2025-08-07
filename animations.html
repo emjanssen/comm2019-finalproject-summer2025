@@ -10,7 +10,7 @@
     <link rel="stylesheet" media="screen" href="css/main.css">
     <link rel="stylesheet" media="screen" href="css/animations.css">
     <link rel="icon" href="css/img/faviconStar.ico" type="image/x-icon">
-    <script>var pageTitle = "Animations";</script>
+    <script>var pageTitle = "Animations - Placeholder";</script>
     <script src="js/main.js" defer></script>
 
     <title></title>
@@ -27,8 +27,15 @@
             <div id="animations-grid">
 
                 <div id="animations-one">
-                    <p id="neon-sign">Neon Sign</p>
+                    <input type="checkbox" id="flicker-toggle" hidden>
+                    <label for="flicker-toggle" id="flicker-label">Enable Sign Flicker</label>
+
+                    <p id="neon-sign" class="neon-text">Neon Sign</p>
+
+                    <p>The neon sign's flickering effect is off by default.</p>
+                    <p>Click the label above to toggle it on or off.</p>
                 </div>
+
 
                 <div id="animations-two">
                     <input type="checkbox" id="toggle-content" hidden>
@@ -40,20 +47,44 @@
                 </div>
 
                 <div id="animations-three">
-                    <p>Pulse</p>
+                    <input type="checkbox" id="pulse-toggle" hidden>
+                    <label for="pulse-toggle" class="pulse-label">Enable Pulse</label>
+
+                    <p id="pulse-target" class="pulse-text">Pulse</p>
                 </div>
 
-                <div id="animations-four">
-                    <p>Slide into view</p>
-                </div>
+<div id="animations-four">
+  <input type="checkbox" id="slide-toggle" hidden>
+  <label for="slide-toggle" class="slide-label">Slide Text In</label>
+  
+  <p class="slide-text">Slide into view</p>
+</div>
 
-                <div id="animations-five">
-                    <p>Spinning effect</p>
-                </div>
 
-                <div id="animations-six">
-                    <p>Dropdown hamburger menu</p>
-                </div>
+<div id="animations-five">
+  <input type="checkbox" id="spin-toggle" hidden>
+  <label for="spin-toggle" class="spin-label">Toggle Spin</label>
+
+  <p class="spin-text">Spinning effect</p>
+</div>
+
+<div id="animations-six">
+  <input type="checkbox" id="menu-toggle" hidden>
+  <label for="menu-toggle" class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="dropdown-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</div>
 
 
             </div>
