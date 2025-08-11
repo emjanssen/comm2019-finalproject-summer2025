@@ -337,16 +337,29 @@ start 0 deg, move to 360 deg */
 
 /* - - - Animation Six - - - */
 
+/*styling for click to expand menu button */
+#animations-box-one {
+  margin: 3rem;
+  color: rgb(13, 8, 8);
+  background: #b0c3de;
+  padding: 1rem;
+  border: 1px solid #90b4d4;
+  box-shadow: 0 0 8px #90b4d4;
+  border-radius: 8px;
+  margin: 0 2rem;
+  text-align: center;
+}
+
 /* Hamburger button styles */
 .hamburger {
   display: inline-block;
-  cursor: pointer;
-  width: 30px;
+  width: 50px;
   height: 22px;
   position: relative;
   user-select: none;
 }
 
+/* styling for the empty spans to make them look like lines */
 .hamburger span {
   display: block;
   height: 4px;
@@ -356,33 +369,36 @@ start 0 deg, move to 360 deg */
   transition: 0.3s ease;
 }
 
-/* Dropdown menu hidden by default */
+/* dropdown menu (hidden by default) */
 .dropdown-menu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
   background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  border: 0 solid #ddd;
   border-radius: 6px;
   margin-top: 10px;
   width: 150px;
 }
 
-/* Menu list styles */
+/* style for the menu list */
 .dropdown-menu ul {
   list-style: none;
   padding: 10px;
   margin: 0;
 }
 
+/* styles for all li in the list */
 .dropdown-menu li {
   margin-bottom: 8px;
 }
 
+/* no margin for the last li*/
 .dropdown-menu li:last-child {
   margin-bottom: 0;
 }
 
+/* colours, text decoration, font weight */
 .dropdown-menu a {
   text-decoration: none;
   color: #333;
@@ -391,19 +407,26 @@ start 0 deg, move to 360 deg */
 
 /* Show menu when checkbox is checked */
 #menu-toggle:checked+.hamburger+.dropdown-menu {
+  /* give elment some height */
   max-height: 300px;
-  /* adjust as needed */
+  border-width: 1px;
 }
 
 /* Optional: animate hamburger to X when open */
 #menu-toggle:checked+.hamburger span:nth-child(1) {
+  /* rotatation value for 1st span */
+  /* move by certain amount of pixels, and rotate certain amount of degrees */
   transform: translateY(8px) rotate(45deg);
 }
 
 #menu-toggle:checked+.hamburger span:nth-child(2) {
+  /* opacity value for second span 
+  make it invisible */
   opacity: 0;
 }
 
 #menu-toggle:checked+.hamburger span:nth-child(3) {
+  /* rotatation value for 3rd span */
+  /* move by certain amount of pixels, and rotate certain amount of degrees */
   transform: translateY(-8px) rotate(-45deg);
 }
