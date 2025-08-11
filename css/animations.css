@@ -430,3 +430,28 @@ start 0 deg, move to 360 deg */
   /* move by certain amount of pixels, and rotate certain amount of degrees */
   transform: translateY(-8px) rotate(-45deg);
 }
+
+/* - - - Media Queries - - - */
+
+@media (max-width: 600px) {
+  #animations-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  #animations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "animations-one"
+      "animations-two"
+      "animations-three"
+      "animations-four"
+      "animations-five"
+      "animations-six";
+    margin: 1rem;
+    gap: 3rem;
+  }
+}
