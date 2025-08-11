@@ -5,7 +5,7 @@
     grid-template-areas: 
     "animations-one animations-two animations-three"
     "animations-four animations-five animations-six";
-    margin: 3rem;
+    margin: 2rem;
     gap: 2rem;
 }
 
@@ -61,6 +61,8 @@
 
 /* Flicker animation */
 @keyframes flicker {
+  /* at these percentages of the animation duration, content is fully visible 
+  text shadow simulates the glowing effect */
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
     text-shadow:
@@ -71,6 +73,7 @@
       0 0 80px var(--neon-sign-color);
   }
 
+  /* at these percentages, dimmed text, and no text shadow (to mimic no flicker) */
   20%, 24%, 55% {
     opacity: 0.4;
     text-shadow: none;
@@ -79,10 +82,13 @@
 
 /* Default neon styling (no flicker) */
 .neon-text {
+  margin: 1rem;
   font-family: 'Arial', sans-serif;
   font-size: 2rem;
+  /* bit of extra space between the letters */
   letter-spacing: 5px;
   color: var(--neon-sign-color);
+  /* text shadow of varying sizes, all with the same colour */
   text-shadow:
     0 0 5px var(--neon-sign-color),
     0 0 10px var(--neon-sign-color),
@@ -91,35 +97,40 @@
     0 0 80px var(--neon-sign-color);
 }
 
-/* Flicker only when checkbox is checked */
-#flicker-toggle:checked ~ #neon-sign {
+/* Flicker in effect only when checkbox is checked */
+/* When the flicker-toggle id checkbox is checked, apply flicker animation to element with neon-sign id */
+/* ~ is the general sibling combinator: 
+- select any sibling element that comes after the checked element, and matches the next selector.
+- sibling elements are elements that share the same parent element */
+#neon-sign-flicker-toggle:checked ~ #neon-sign {
+  /* play animation infinitely with 3 seconds duration */
   animation: flicker 3s infinite;
 }
 
-/* Style the label like a button */
-#flicker-label {
+/* styling for the 'enable sign flicker' button */
+#neon-sign-flicker-label {
   display: inline-block;
-  margin: 10px 0;
-  padding: 8px 16px;
+  padding: .5rem;
   background-color: #222;
   color: white;
   border: 2px solid var(--neon-sign-color);
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+  /* text inside the element cannot be selected or highlighted by user */
   user-select: none;
 }
 
+/* when the flicker-label checkbox is checked, change the background and text colour of enable flicker button */
 #flicker-toggle:checked + #flicker-label {
   background-color: var(--neon-sign-color);
   color: black;
 }
 
-
 /* animations-two */
 
-/* Base styles remain the same */
-.click-to-show {
+/* styling for the 'click to reveal' button */
+.hidden-content-click-to-show {
   cursor: pointer;
   background-color: #e3eaf4;
   color: #5c7ea3;
@@ -132,17 +143,21 @@
   text-align: center;
 }
 
-.click-to-show:hover {
+/* slight hover effect on click to show button */
+.hidden-content-click-to-show:hover {
   background-color: #d2deec;
   box-shadow: 0 0 8px #b0c8e5;
 }
 
 /* Transitionable hidden state */
 .hidden-content {
+  /* height, overflow and opacity initially set to make it invisible */
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.6s ease;
+ /* - - - */
+
+  /* styling for hidden content */
   color: rgb(60, 56, 56);
   background: #b0c3de;
   padding: 0 1rem;
@@ -153,12 +168,21 @@
   text-align: center;
 }
 
+.hidden-content {
+  /* transition to visible will take one second */
+  /* this makes the transition from 0 opacity to 1 opacity take a second */
+  /* the transition to max height alos takes a second */
+  transition: 
+    opacity 1s ease,
+    max-height 1s ease,
+    padding 1s ease;
+}
+ 
 /* Smooth reveal when checkbox is checked */
-#toggle-content:checked + .click-to-show + .hidden-content {
-  max-height: 500px; /* or higher if you expect more content */
+#hidden-content-toggle-content:checked + .hidden-content-click-to-show + .hidden-content {
+  max-height: 500px;
   opacity: 1;
   padding: 1rem;
-  margin-top: 2rem;
 }
 
 /* animations-three */
