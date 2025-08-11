@@ -1,36 +1,36 @@
 #animations-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
     "animations-one animations-two animations-three"
     "animations-four animations-five animations-six";
-    margin: 2rem;
-    gap: 2rem;
+  margin: 2rem;
+  gap: 2rem;
 }
 
 #animations-one {
-    grid-area: animations-one;
+  grid-area: animations-one;
 }
 
 #animations-two {
-    grid-area: animations-two;
+  grid-area: animations-two;
 }
 
 #animations-three {
-    grid-area: animations-three;
+  grid-area: animations-three;
 }
 
 #animations-four {
-    grid-area: animations-four;
+  grid-area: animations-four;
 }
 
 #animations-five {
-    grid-area: animations-five;
+  grid-area: animations-five;
 }
 
 #animations-six {
-    grid-area: animations-six;
+  grid-area: animations-six;
 }
 
 #animations-one,
@@ -39,16 +39,16 @@
 #animations-four,
 #animations-five,
 #animations-six {
-    background-color: #f1f8f1;
-    border: 1px solid #cdded1;
-    padding: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
+  background-color: #f1f8f1;
+  border: 1px solid #cdded1;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 }
 
-/* animations-one */
+/* - - - Animation One - - - */
 
 #animations-one {
   flex-direction: column;
@@ -61,9 +61,17 @@
 
 /* Flicker animation */
 @keyframes flicker {
+
   /* at these percentages of the animation duration, content is fully visible 
   text shadow simulates the glowing effect */
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
     opacity: 1;
     text-shadow:
       0 0 5px var(--neon-sign-color),
@@ -74,7 +82,9 @@
   }
 
   /* at these percentages, dimmed text, and no text shadow (to mimic no flicker) */
-  20%, 24%, 55% {
+  20%,
+  24%,
+  55% {
     opacity: 0.4;
     text-shadow: none;
   }
@@ -102,7 +112,7 @@
 /* ~ is the general sibling combinator: 
 - select any sibling element that comes after the checked element, and matches the next selector.
 - sibling elements are elements that share the same parent element */
-#neon-sign-flicker-toggle:checked ~ #neon-sign {
+#neon-sign-flicker-toggle:checked~#neon-sign {
   /* play animation infinitely with 3 seconds duration */
   animation: flicker 3s infinite;
 }
@@ -122,12 +132,12 @@
 }
 
 /* when the flicker-label checkbox is checked, change the background and text colour of enable flicker button */
-#flicker-toggle:checked + #flicker-label {
+#flicker-toggle:checked+#flicker-label {
   background-color: var(--neon-sign-color);
   color: black;
 }
 
-/* animations-two */
+/* - - - Animation Two - - - */
 
 /* styling for the 'click to reveal' button */
 .hidden-content-click-to-show {
@@ -155,7 +165,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
- /* - - - */
+  /* - - - */
 
   /* styling for hidden content */
   color: rgb(60, 56, 56);
@@ -172,28 +182,31 @@
   /* transition to visible will take one second */
   /* this makes the transition from 0 opacity to 1 opacity take a second */
   /* the transition to max height alos takes a second */
-  transition: 
+  transition:
     opacity 1s ease,
     max-height 1s ease,
     padding 1s ease;
 }
- 
+
 /* Smooth reveal when checkbox is checked */
-#hidden-content-toggle-content:checked + .hidden-content-click-to-show + .hidden-content {
+#hidden-content-toggle-content:checked+.hidden-content-click-to-show+.hidden-content {
   max-height: 500px;
   opacity: 1;
   padding: 1rem;
 }
 
-/* animations-three */
+/* - - - Animation Three - - - */
 
 /* Pulse animation keyframes */
 /* vary the opacity and scaling at different time intervals */
 @keyframes slowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.85;
@@ -213,7 +226,7 @@
 
 /* apply pulse animation when checkbox is checked */
 /* target the .pulse-label and .pulse-text when pulse-toggle is checked */
-#pulse-toggle:checked + .pulse-label + .pulse-text {
+#pulse-toggle:checked+.pulse-label+.pulse-text {
   /* applies our previously defined slowpulse animation
   duration of three seconds
   plays forever */
@@ -234,7 +247,7 @@
   font-weight: 600;
 }
 
-/* animations four */
+/* - - - Animation Four - - - */
 
 /* styling for the toggle text slide in button */
 .slide-label {
@@ -247,6 +260,7 @@
   border: 1px solid #ccc;
   user-select: none;
   font-weight: 600;
+  box-shadow: 0 0 8px #90b4d4;
 }
 
 /* Base state: text off-screen to the left, hidden */
@@ -256,60 +270,72 @@
   opacity: 0;
   /* both the horizonal movement and the opacity change take 1 second */
   transition: transform 1s ease, opacity 1s ease;
+  /* pointer-events: none, so label isn't blocked by .slide-text overlaying the toggle button */
+  pointer-events: none;
   padding: 1rem;
   background-color: #eee;
   color: #333;
   border-radius: 6px;
   border: 1px solid #ccc;
   margin: 2rem;
+  box-shadow: 0 0 4px #90b4d4;
 }
 
 /* When checkbox is checked, slide text in */
-#slide-toggle:checked + .slide-label + .slide-text {
+#slide-toggle:checked+.slide-label+.slide-text {
   /* move back from the -100% location */
   transform: translateX(0);
   /* make visible again */
   opacity: 1;
 }
 
-/* animations five */
+/* - - - Animation Five - - - */
 
 /* Style the toggle label as a button */
 .spin-label {
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #eee;
-  color: #333;
+  padding: 1rem;
+  margin: 1.5rem;
+  background-color: #e9f4df;
+  color: #517cf2;
   border-radius: 6px;
   border: 1px solid #ccc;
   user-select: none;
   font-weight: 600;
+  box-shadow: 0 0 8px #99d490;
 }
 
-/* Keyframes for spinning */
+/* Keyframes for spinning animations 
+start 0 deg, move to 360 deg */
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Base state: no spin */
+/* base state with no spin */
 .spin-text {
   display: inline-block;
   transition: transform 0.3s ease;
+  background-color: #f5ecf9;
+  color: #8c56dc;
+  border-radius: 25%;
+  border: 1px solid #ccc;
+  padding: 2rem;
 }
 
-/* When checked, apply infinite spin animation */
-#spin-toggle:checked + .spin-label + .spin-text {
+/* when spin-toggle is check, apply the spin animation indefinitely */
+#spin-toggle:checked+.spin-label+.spin-text {
+  /* linear means the animation runs at a constant speed from start to finish */
   animation: spin 3s linear infinite;
 }
 
-/* animations six */
+/* - - - Animation Six - - - */
 
 /* Hamburger button styles */
 .hamburger {
@@ -364,19 +390,20 @@
 }
 
 /* Show menu when checkbox is checked */
-#menu-toggle:checked + .hamburger + .dropdown-menu {
-  max-height: 300px; /* adjust as needed */
+#menu-toggle:checked+.hamburger+.dropdown-menu {
+  max-height: 300px;
+  /* adjust as needed */
 }
 
 /* Optional: animate hamburger to X when open */
-#menu-toggle:checked + .hamburger span:nth-child(1) {
+#menu-toggle:checked+.hamburger span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
 
-#menu-toggle:checked + .hamburger span:nth-child(2) {
+#menu-toggle:checked+.hamburger span:nth-child(2) {
   opacity: 0;
 }
 
-#menu-toggle:checked + .hamburger span:nth-child(3) {
+#menu-toggle:checked+.hamburger span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
