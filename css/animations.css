@@ -188,6 +188,7 @@
 /* animations-three */
 
 /* Pulse animation keyframes */
+/* vary the opacity and scaling at different time intervals */
 @keyframes slowPulse {
   0%, 100% {
     transform: scale(1);
@@ -199,29 +200,33 @@
   }
 }
 
-/* Base pulse target (static) */
+/* static pulse text */
 .pulse-text {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
   color: #9147ff;
-  padding: 1rem;
+  padding: 2rem;
+  /* apply transition to all animatable properties over 0.3 secs with ease */
   transition: all 0.3s ease;
 }
 
-/* Apply pulse animation only when checkbox is checked */
+/* apply pulse animation when checkbox is checked */
+/* target the .pulse-label and .pulse-text when pulse-toggle is checked */
 #pulse-toggle:checked + .pulse-label + .pulse-text {
+  /* applies our previously defined slowpulse animation
+  duration of three seconds
+  plays forever */
   animation: slowPulse 3s ease-in-out infinite;
 }
 
-/* Style the toggle label */
+/* toggle button styling */
 .pulse-label {
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #eee;
-  color: #333;
+  padding: 1rem;
+  background-color: #f5ecf9;
+  color: #8c56dc;
   border-radius: 6px;
   border: 1px solid #ccc;
   text-align: center;
@@ -229,21 +234,13 @@
   font-weight: 600;
 }
 
-/* Optional: change label style when pulse is active */
-#pulse-toggle:checked + .pulse-label {
-  background-color: #9147ff;
-  color: white;
-  border-color: #9147ff;
-}
-
 /* animations four */
 
-/* Style the toggle label as a button */
+/* styling for the toggle text slide in button */
 .slide-label {
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   background-color: #eee;
   color: #333;
   border-radius: 6px;
@@ -254,16 +251,24 @@
 
 /* Base state: text off-screen to the left, hidden */
 .slide-text {
+  /* moved horizonally by -100% */
   transform: translateX(-100%);
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  /* Optional: keep text inline */
-  display: inline-block;
+  /* both the horizonal movement and the opacity change take 1 second */
+  transition: transform 1s ease, opacity 1s ease;
+  padding: 1rem;
+  background-color: #eee;
+  color: #333;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 2rem;
 }
 
 /* When checkbox is checked, slide text in */
 #slide-toggle:checked + .slide-label + .slide-text {
+  /* move back from the -100% location */
   transform: translateX(0);
+  /* make visible again */
   opacity: 1;
 }
 
