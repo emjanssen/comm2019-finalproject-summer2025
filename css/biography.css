@@ -86,13 +86,17 @@ figcaption {
 /* bio photo */
 #bio-grid-one-content-two {
     grid-area: bio-grid-one-content-two;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
-
 #bio-image {
     border-radius: 15px;
-    max-height: 75%;
-    width: auto;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 /* bio one-sentence */
@@ -100,4 +104,78 @@ figcaption {
     grid-area: bio-grid-one-content-three;
     display: flex;
     justify-content: center;
+}
+
+/* - - - Media Queries - - - */
+
+@media (min-width: 901px) and (max-width: 1400px) {
+    #biography-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "biography-grid-one biography-grid-one"
+            "biography-grid-two biography-grid-three";
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    #biography-grid-one {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "bio-grid-one-content-two bio-grid-one-content-one"
+            "bio-grid-one-content-two bio-grid-one-content-three";
+        margin: 1rem 2rem;
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    #biography-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "biography-grid-one"
+            "biography-grid-two"
+            "biography-grid-three";
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    #biography-grid-one {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "bio-grid-one-content-one"
+            "bio-grid-one-content-two"
+            "bio-grid-one-content-three";
+        margin: 1rem 2rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #biography-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "biography-grid-two"
+            "biography-grid-one"
+            "biography-grid-three";
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #biography-grid-one {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "bio-grid-one-content-one"
+            "bio-grid-one-content-two"
+            "bio-grid-one-content-three";
+        margin: 1rem;
+        padding: 2rem;
+    }
 }
